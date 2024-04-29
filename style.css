@@ -1,0 +1,164 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+    transition: all .25s ease-in;
+}
+
+body {
+    background: lightgray;
+    min-height: 100vh;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.demo-wrapper {
+    max-width: 960px;
+    width: 96%;
+    margin: auto;
+    min-height: 100vh;
+    background: white;
+}
+
+.demo-header {
+    text-align: center;
+    padding: 10px;
+    background: lightsteelblue;
+}
+
+.demo-footer {
+    display: flex;
+    background: lightsteelblue;
+}
+
+.demo-footer a:first-child {
+    margin: 0 auto 0 0;
+}
+
+.demo-footer a {
+    line-height: 2;
+    padding: 0 .5em;
+    color: blue;
+}
+
+
+/**
+ * Begin: UI - Cards Blog Posts
+ *
+ * Design is based on content from a blog
+ * Each Post Summary is placed in a Card component
+ * Cards are placed in OL LO
+ */
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+}
+
+.cards .card {
+    flex: 0 0 calc(100% - 20px);
+    display: flex;
+    margin: 10px;
+    min-width: 0;
+    background: lightblue;
+}
+
+.cards .card-link {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 100%;
+}
+
+.cards .card-figure {
+    position: relative;
+    margin: 0;
+    line-height: 0;
+    overflow: hidden;
+}
+
+.cards .card-figure-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transform-origin: 80% 12%;
+    transform: rotate(0) scale(1);
+    transition: all 2s;
+    filter: grayscale(100);
+}
+
+.cards .card-figure-caption {
+    padding: 0 10px;
+}
+
+.cards .card-link:hover .card-figure-image {
+    transform: rotate(6deg) scale(2);
+    filter: grayscale(0);
+}
+
+.cards .card-figure-caption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0px;
+    background: hsla(228, 3%, 34%, 0.5);
+    color: hsla(0, 0%, 100%, 1);
+    backdrop-filter: blur(5px);
+    line-height: 2;
+    font-style: italic;
+}
+
+.cards .card-section {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    background-color: lightcoral;
+}
+
+.cards .card-section-title {
+    margin-bottom: 0;
+    border-bottom: 1px solid;
+}
+
+.cards .card-section-meta {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cards .card-section-meta * {
+    flex: 0 0 50%;
+    font-size: .8em;
+    line-height: 2;
+}
+
+.cards .card-section-meta :nth-child(even) {
+    text-align: right;
+}
+
+.cards .card-section-excerpt {
+    flex-grow: 1;
+}
+
+.cards .card-section-button {
+    align-self: flex-end;
+    margin: 10px;
+    padding: 0 1em;
+    border-radius: .5em;
+    border: 1px solid;
+    line-height: 2;
+}
+
+@media (min-width: 768px) {
+    .cards .card {
+        flex: 0 0 calc(50% - 20px);
+    }
+
+}
